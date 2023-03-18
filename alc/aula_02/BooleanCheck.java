@@ -7,7 +7,7 @@
 package fatec.alc.aula_02;
 import	java.util.Scanner;
 
-public class booleanCheck {
+public class BooleanCheck {
 	public static void main(String[] args) {
 		int	a, b, c, d;
 

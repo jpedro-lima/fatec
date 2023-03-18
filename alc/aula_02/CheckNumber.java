@@ -7,7 +7,7 @@
 package fatec.alc.aula_02;
 import	java.util.Scanner;
 
-public class checkNumber {
+public class CheckNumber {
 	public static void main(String[] args) {
 		double	nb;
 

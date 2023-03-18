@@ -7,7 +7,7 @@
 package fatec.alc.aula_02;
 import	java.util.Scanner;
 
-public class pesoIdeal {
+public class PesoIdeal {
 	public static void main(String[] args) {
 		String	sexo;
 		char	s;
