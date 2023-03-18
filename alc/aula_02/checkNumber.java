@@ -24,10 +24,10 @@ public class checkNumber {
 			System.out.println("É um número Nulo (╯‵□′)╯︵┻━┻");
 
 		//teste se é ímpar
-		if (nb % 2 == 0 && nb != 0)
-			System.out.println("O número é par ~(￣▽￣)~");
-		else if (nb != 0)
+		if (nb % 2 != 0)
 			System.out.println("O número é ímpar `(*>﹏<*)′");
+		else if (nb != 0)
+			System.out.println("O número é par ~(￣▽￣)~");
 		scanner.close();
 	}
 }
