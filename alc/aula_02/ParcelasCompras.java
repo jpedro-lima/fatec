@@ -30,7 +30,7 @@ public class ParcelasCompras {
 		else if (parcel == 3)
 			System.out.println("O valor a pagar é: " + String.format("%.2f", value + (value * 0.1)));
 		else
-			System.out.println("Número de parcelas incorreto");
+			System.out.println("Número de parcelas inválido");
 		scanner.close();
 	}
 }
