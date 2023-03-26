@@ -1,0 +1,315 @@
+/*
+ * João Pedro Correia de Lima
+ * RA: 1430482313040
+*/
+
+// Lista 01 - ex. 28
+import	java.util.Scanner;
+
+public class SomaDosQuadrados {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		double	a, b, c, soma;
+
+		System.out.print("Digite o primeiro número: ");
+		a = scanner.nextDouble();
+		System.out.print("Digite o segundo número: ");
+		b = scanner.nextDouble();
+		System.out.print("Digite o terceiro número: ");
+		c = scanner.nextDouble();
+		
+		soma =  (a * a) + (b * b) + (c * c);
+		System.out.println(a + "^2 + " + b + "^2 + " + c + "^2 = " + soma);
+		scanner.close();
+	}	
+}
+
+// Lista 01 - ex. 32
+import	java.util.Scanner;
+
+public class SomaDosRelacionais {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		int		nb, soma;
+
+		System.out.print("Digite um número inteiro: ");
+		nb = scanner.nextInt();
+		
+		soma = (nb * 3) + 1;
+		soma += (nb * 2) - 1;
+		System.out.println("A soma é: " + soma);
+		scanner.close();
+	}	
+}
+
+// Lista 01 - ex. 40
+import java.util.Scanner;
+
+public class DiariaDoEncanador {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		double	wage, tax;
+		int		days;
+
+		System.out.print("Digite a quantidade de dias trabalhados: ");
+		days = scanner.nextInt();
+		wage = days * 30;
+		tax = wage * 0.08;
+		System.out.println("O valor à ser pago é:\nR$ "
+			+ String.format("%.2f", wage - tax) + " - IR R$ " + String.format("%.2f", tax));
+		scanner.close();
+	}
+}
+
+// Lista 01 - ex. 52
+import java.util.Scanner;
+
+public class LoteriaEmTresPartes {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		double	award, first, second, third, proportion;
+
+		System.out.print("Digite o valor do prêmio: ");
+		award = scanner.nextDouble();
+		System.out.print("Contribuição do 1º integrante: ");
+		first = scanner.nextDouble();
+		System.out.print("Contribuição do 2º integrante: ");
+		second = scanner.nextDouble();
+		System.out.print("Contribuição do 3º integrante: ");
+		third = scanner.nextDouble();
+		if (award > 0)
+		{
+			System.out.println("Distribuição do prêmio:");
+			proportion = (first * 100) / (first + second + third) / 100;
+			System.out.println("1º R$ " + String.format("%.2f", award * proportion));
+			proportion = (second * 100) / (first + second + third) / 100;
+			System.out.println("2º R$ " + String.format("%.2f", award * proportion));
+			proportion = (third * 100) / (first + second + third) / 100;
+			System.out.println("3º R$ " + String.format("%.2f", award * proportion));
+		}
+		else
+			System.out.println("O prêmio precisa ser maior que 0");
+		scanner.close();
+	}	
+}
+
+
+// Lista 02 - ex. 14
+import java.util.Scanner;
+
+/*
+ * Fiquei com a dúvida se cada nota poderia ser de 0-10 ou se a soma deveria ser até 10
+ * Como a média fica muito alta seguindo a lógica de cada nota de 0-10, segui a outra lógica 
+*/
+public class MediaAluno {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		float	lab, evaluation, exame, media, soma;
+		
+		System.out.print("Nota do trabalho de laboratório: ");
+		lab = scanner.nextFloat();
+		System.out.print("Nota da avaliação semestral: ");
+		evaluation = scanner.nextFloat();
+		System.out.print("Nota do exame final: ");
+		exame = scanner.nextFloat();
+
+		soma = lab + evaluation + exame;
+		if (soma >= 0 && soma <= 10)
+		{
+			lab *= 2;
+			evaluation *= 3;
+			exame *= 5;
+			media = (lab + evaluation + exame) / 3;
+			System.out.println("Media: " + String.format("%.2f", media));
+			if (media >= 5)
+				System.out.println("Aluno aprovado!");
+			else if (media >= 3)
+				System.out.println("Aluno em recuperação");
+			else
+				System.out.println("Aluno reprovado");
+		}
+		else
+			System.out.println("A soma das notas deve ser 10");
+		scanner.close();
+	}
+}
+
+
+// Lista 02 - ex. 16
+import java.util.Scanner;
+
+public class WhatMonth {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int	month;
+
+		System.out.print("Digite um valor de 1 à 12: ");
+		month = scanner.nextInt();
+		switch (month) {
+			case 1:
+				System.out.println("Janeiro");
+				break;
+			case 2:
+				System.out.println("Fevereiro");
+				break;
+			case 3:
+				System.out.println("Março");
+				break;
+			case 4:
+				System.out.println("Abril");
+				break;
+			case 5:
+				System.out.println("Maio");
+				break;
+			case 6:
+				System.out.println("Junho");
+				break;
+			case 7:
+				System.out.println("Julho");
+			case 8:
+				System.out.println("Agosto");
+			case 9:
+				System.out.println("Setembro");
+			case 10:
+				System.out.println("Outubro");
+			case 11:
+				System.out.println("Novembro");
+			case 12:
+				System.out.println("Dezembro");
+			default:
+				System.out.println("Número inválido `(*>﹏<*)′");
+				break;
+		}
+		scanner.close();
+	}
+}
+
+// Lista 02 - ex. 21
+import java.util.Scanner;
+
+public class MenuCalculadora {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		double	a, b;
+		int		key;
+
+		System.out.println("1- Soma de 2 números.");
+		System.out.println("2- Diferença entre 2 números.");
+		System.out.println("3- Produto entre 2 números.");
+		System.out.println("4- Divisão entre 2 números.");
+		System.out.print("Opção: ");
+		key = scanner.nextInt();
+		System.out.print("Digite o primeiro número: ");
+		a = scanner.nextDouble();
+		System.out.print("Digite o segundo número: ");
+		b = scanner.nextDouble();
+		switch (key) {
+			case 1:
+				System.out.println(a + " + " + b + " = " + (a + b));
+				break;
+			case 2:
+				if(a >= b)
+					System.out.println(a + " - " + b + " = " + (a - b));
+				else
+					System.out.println(b + " - " + a + " = " + (b - a));
+				break;
+			case 3:
+				System.out.println(a + " * " + b + " = " + (a * b));
+				break;
+			case 4:
+				if (b > 0)
+					System.out.println(a + " / " + b + " = " + (a / b));
+				else
+					System.out.println("O denominador deve ser maior que 0");
+				break;
+			default:
+				System.out.println("Se atenha ao menu");
+				break;
+		}
+		scanner.close();
+	}
+}
+
+// Lista 02 - ex. 26
+import java.util.Scanner;
+
+/*
+ * No exercício a tabela diz:
+ * entre 8 - 14 "Econômico"
+ * superior à 12 "Super econômico"
+ * Como isso parece um erro, eu interpretei sendo de 8-12 e > 12
+ */
+public class ConsumoGasolina {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		double	km, liters, consumption;
+
+		System.out.print("Km percorridos: ");
+		km = scanner.nextDouble();
+		System.out.print("Combustivel consumido: ");
+		liters = scanner.nextDouble();
+
+		if(km > 0 && liters > 0)
+		{
+			consumption = km / liters;
+			System.out.println("km/l: " + consumption);
+			if (consumption > 12)
+				System.out.println("Super econômico!");
+			else if(consumption >= 8)
+				System.out.println("Econômico!");
+			else
+				System.out.println("Venda o carro!");
+		}
+		else
+			System.out.println("Boa tentativa ╰(*°▽°*)╯");
+		scanner.close();
+	}	
+}
+
+
+//=========================================================================
+// Bônus passado em sala
+// Lista 02 - ex. 38
+
+import java.util.Scanner;
+
+public class DataCheck {
+	public static void main(String[] args) {
+		int day, month, year;
+		boolean flag;
+		Scanner scanner = new Scanner(System.in);
+	
+		System.out.print("Digite o dia: ");
+		day = scanner.nextInt();
+		System.out.print("Digite o mês: ");
+		month = scanner.nextInt();
+		System.out.print("Digite o ano: ");
+		year = scanner.nextInt();
+		flag = false;
+		if (year <= 2023)
+		{
+			if (month > 0 && month <= 12)
+			{
+				if (month == 2)
+				{
+					if (year % 4 == 0 && (day > 0 && day <= 29))
+					flag = true;
+					if (year % 4 != 0 && (day > 0 && day <= 28))
+					flag = true;
+				}
+				else if (month == 4 || month == 6 || month == 9 || month == 11)
+				{
+					if (day > 0 && day <= 31)
+					flag = true;
+				}
+				else if (day > 0 && day <= 30)
+					flag = true;
+			}
+		}
+		if (flag)
+			System.out.println("Data válida");
+		else
+			System.out.println("Data inválida");
+		scanner.close();
+	}
+}
