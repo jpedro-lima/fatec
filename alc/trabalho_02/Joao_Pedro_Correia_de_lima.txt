@@ -1,0 +1,160 @@
+/*
+ * João Pedro Correia de Lima
+ * RA: 1430482313040
+*/
+
+/* 
+ * 14. Faça um programa que leia um número inteiro positivo par N e imprima todos os números pares 
+ * de 0 até N em ordem decrescente.
+*/ 
+import java.util.Scanner;
+public class PairNumbers {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		int	nb;
+
+		System.out.print("Digite um número par: ");
+		nb = scanner.nextInt();
+		
+		if (nb % 2 != 0)
+			System.out.println("Este é um número ímpar");
+		else
+		{
+			while(nb >= 0)
+			{
+				System.out.println(nb);
+				nb -= 2;
+			}
+		}
+		scanner.close();
+	}
+}
+
+/*
+* 19. Escreva um algoritmo que leia um número inteiro entre 100 e 999 e imprima na saída
+* cada um dos algarismos que compõem o número
+*/
+import java.util.Scanner;
+public class PrintThreeNumbers {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int		nb, size;
+
+		System.out.print("Digite um número de 100 - 999: ");
+		nb = scanner.nextInt();
+		size = 3;
+		if (nb < 100 || nb > 999)
+			System.out.println("Número inválido");
+		else
+		{
+			while (size-- > 0)
+			{
+				System.out.println((int)(nb / Math.pow(10, size)));
+				nb %= Math.pow(10, size);
+			}
+		}
+		scanner.close();
+	}
+}
+
+/*
+ * 21. Faça um programa que receba dois números. Calcule e mostre:
+ *	• a soma dos números pares desse intervalo de números, incluindo os números digitados;
+ *	• a multiplicação dos números ímpares desse intervalo, incluindo os digitados;
+*/
+import java.util.Scanner;
+public class TwoMagicNumbers {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		int		a, b;
+
+		System.out.print("Digite o valor de a: ");
+		a = scanner.nextInt();
+		System.out.print("Digite o valor de b: ");
+		b = scanner.nextInt();
+		if (a > b)
+			calculation(a, b);
+		else
+			calculation(b, a);
+		scanner.close();
+	}
+	private static void calculation(int max, int min)
+	{
+		int	sum, mult;
+
+		sum = 0;
+		mult = 1;
+		while (max >= min)
+		{
+			if (max % 2 == 0)
+				sum += max;
+			else
+				mult *= max;
+			max--;
+		}
+		if (mult == 1 && max != 1 && min != 1)
+			mult = 0;
+		System.out.println("A soma dos pares é: " + sum);
+		System.out.println("A multiplicação dos ímpares é: " + mult);
+	}
+}
+
+/*
+ * 27. Em Matemática, o número harmônico designado por H(n) define-se como sendo a soma da série harmônica:
+ * 		H(n) = 1 + 1/2 + 1/3 + 1/4 + ... + 1/n
+ * Faça um programa que leia um valor n inteiro e positivo e apresente o valor de H(n).
+*/
+import java.util.Scanner;
+
+public class HarmonicNumber {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		int		n;
+
+		System.out.print("Digite um número N*: ");
+		n = scanner.nextInt();
+		if (n < 0)
+			System.out.println("Número inválido");
+		else
+			System.out.println("H(n) = " + harmonicRecursion(n));
+		scanner.close();
+	}
+	private static double harmonicRecursion(double nb)
+	{
+		if (nb == 0)
+			return (0);
+		return (harmonicRecursion(nb - 1) + (double)1 / nb);
+	}
+}
+
+/*
+ * 30. Faça programas para calcular as seguintes sequências:
+ *	1 + 2 + 3 + 4 + 5 + ... + n
+ *	1 − 2 + 3 − 4 + 5 + ... + (2n − 1)
+ *	1 + 3 + 5 + 7 + ... + (2n − 1)
+*/
+import java.util.Scanner;
+public class CrazyCalculation {
+	public static void main(String[] args) {
+		Scanner	scanner = new Scanner(System.in);
+		int		nb;
+
+		System.out.print("Digite um número inteiro: ");
+		nb = scanner.nextInt();
+		if (nb <= 0)
+			System.out.println("Número inválido");
+		else
+		{
+			System.out.println("\tREGRAS\n" +
+			"I: 1 + 2 + 3 + 4 + 5 + ... + n\n" +
+			"II: 1 − 2 + 3 − 4 + 5 + ... + (2n − 1)\n" +
+			"III: 1 + 3 + 5 + 7 + ... + (2n − 1)");
+			System.out.println("=======================================");
+
+			System.out.println("I: " + (nb * (nb + 1)) / 2);
+			System.out.println("II: " + nb);
+			System.out.println("III: " + (nb * nb));
+		}
+		scanner.close();
+	}
+}
