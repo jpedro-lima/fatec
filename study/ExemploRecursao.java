@@ -5,7 +5,6 @@ public class ExemploRecursao {
         int fatorial = calcularFatorial(numero);
         System.out.println("O fatorial de " + numero + " é " + fatorial);
     }
-
     public static int calcularFatorial(int numero) {
         if (numero == 0) {
             return 1;

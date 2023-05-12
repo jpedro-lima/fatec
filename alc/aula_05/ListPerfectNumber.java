@@ -1,5 +1,3 @@
-
-
 package fatec.alc.aula_05;
 
 import java.util.Scanner;
