@@ -26,7 +26,34 @@ public class CrazyCalculation {
 			System.out.println("I: " + (nb * (nb + 1)) / 2);
 			System.out.println("II: " + nb);
 			System.out.println("III: " + (nb * nb));
+
+			redundantCode(nb);
 		}
 		scanner.close();
+	}
+	private static void redundantCode(int nb)
+	{
+		int sum, sumOdd, subSum, dupNb;
+
+		sum = 0;
+		sumOdd = 0;
+		subSum = 0;
+		dupNb = nb * 2;
+		while (--dupNb > 0)
+		{
+			if (dupNb <= nb)
+				sum += dupNb;
+			if (dupNb % 2 != 0)
+			{
+				subSum += dupNb;
+				sumOdd += dupNb;
+			}
+			else
+				subSum -= dupNb;
+		}
+		System.out.println("==== I'm a redundant code `(*>﹏<*)′ ====");
+		System.out.println("I: " + sum);
+		System.out.println("II: " + subSum);
+		System.out.println("III: " + sumOdd);
 	}
 }
